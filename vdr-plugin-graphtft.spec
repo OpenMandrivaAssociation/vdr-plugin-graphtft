@@ -3,7 +3,7 @@
 %define name	vdr-plugin-%plugin
 %define version	0.3.2
 %define prever	rc2
-%define rel	2
+%define rel	3
 
 Summary:	VDR plugin: VDR OSD on TFT
 Name:		%name
