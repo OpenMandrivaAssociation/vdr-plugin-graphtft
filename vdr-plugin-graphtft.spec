@@ -3,7 +3,7 @@
 %define name	vdr-plugin-%plugin
 %define version	0.3.2
 %define prever	rc2
-%define rel	3
+%define rel	4
 
 Summary:	VDR plugin: VDR OSD on TFT
 Name:		%name
@@ -73,6 +73,7 @@ graphtft plugin. Themes are not included in this package. Install themes
 under %{_vdr_plugin_cfgdir}/graphTFT/themes/.
 
 %build
+export VDR_PLUGIN_EXTRA_FLAGS="-D__STDC_CONSTANT_MACROS"
 %vdr_plugin_build
 %make -C graphtft-fe LFLAGS="%{?ldflags}" CXX="g++ %{optflags}"
 
