@@ -1,0 +1,45 @@
+diff -N'urpx*~' graphtft-0.3.2-rc2/display.c graphtft-0.3.2-rc2-co/display.c
+--- graphtft-0.3.2-rc2/display.c	2008-12-16 17:28:01.000000000 +0200
++++ graphtft-0.3.2-rc2-co/display.c	2009-07-28 22:34:26.859092548 +0300
+@@ -156,7 +156,7 @@ cGraphTFTDisplay::~cGraphTFTDisplay() 
+ 
+ int cGraphTFTDisplay::Init(const char* dev, const char* cfgDir, int port)
+ {
+-   char* pos = 0;
++   const char* pos = 0;
+    int devnum = na;
+ 
+ #ifdef HAVE_DFB
+diff -N'urpx*~' graphtft-0.3.2-rc2/theme.c graphtft-0.3.2-rc2-co/theme.c
+--- graphtft-0.3.2-rc2/theme.c	2008-12-15 22:40:50.000000000 +0200
++++ graphtft-0.3.2-rc2-co/theme.c	2009-07-28 22:34:55.778092836 +0300
+@@ -102,7 +102,7 @@ const char* VariableProvider::splitForma
+ //  "{varTest} xx {varHallo}" -> varTest
+ //***************************************************************************
+ 
+-int VariableProvider::variableOf(string& name, const char* expression, char*& e)
++int VariableProvider::variableOf(string& name, const char* expression, const char*& e)
+ {
+    const char* s;
+ 
+diff -N'urpx*~' graphtft-0.3.2-rc2/theme.h graphtft-0.3.2-rc2-co/theme.h
+--- graphtft-0.3.2-rc2/theme.h	2008-12-14 17:56:24.000000000 +0200
++++ graphtft-0.3.2-rc2-co/theme.h	2009-07-28 22:37:25.152842908 +0300
+@@ -50,7 +50,7 @@ class VariableProvider
+       virtual string channelLogoPath(const char* channel, 
+                                      const char* format = 0, int classic = yes);
+ 
+-      virtual int variableOf(string& name, const char* expression, char*& e);
++      virtual int variableOf(string& name, const char* expression, const char*& e);
+       virtual int evaluate(string& buf, const char* var);
+       virtual const char* splitFormatValue(const char* data, 
+                                    char* value, char* format);
+@@ -445,7 +445,7 @@ class cDisplayItem : public cThemeItem
+       { 
+          string p;
+          string name;
+-         char* e;
++         const char* e;
+ 
+          if (value != na && variableOf(name, exp, e) == success)
+             setVariable(name.c_str(), value);
