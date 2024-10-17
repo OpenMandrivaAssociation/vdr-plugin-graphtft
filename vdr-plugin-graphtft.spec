@@ -15,7 +15,7 @@ Release:	%mkrel %rel
 %endif
 Group:		Video
 License:	GPL+
-URL:		http://www.jwendel.de/vdr/
+URL:		https://www.jwendel.de/vdr/
 %if %prever
 Source:		http://www.jwendel.de/vdr/vdr-graphtft-%version-%prever.tar.bz2
 %else
