@@ -26,6 +26,7 @@ Patch2:		graphtft-const-char-gcc4.4.patch
 # ffmpeg fixes (from e-tobi)
 Patch0:		graphtft-ffmpeg.patch
 BuildRoot:	%{_tmppath}/%{name}-buildroot
+BuildRequires:	make
 BuildRequires:	vdr-devel >= 1.6.0
 BuildRequires:	ffmpeg-devel
 BuildRequires:	imlib2-devel
