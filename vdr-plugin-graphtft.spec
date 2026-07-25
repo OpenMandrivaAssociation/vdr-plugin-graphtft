@@ -9,9 +9,9 @@ Summary:	VDR plugin: VDR OSD on TFT
 Name:		%name
 Version:	%version
 %if %prever
-Release:	%mkrel 0.%prever.%rel
+Release:	1
 %else
-Release:	%mkrel %rel
+Release:	%rel.1
 %endif
 Group:		Video
 License:	GPL+
